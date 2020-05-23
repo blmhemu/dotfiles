@@ -33,14 +33,14 @@ zinit light-mode for \
 
 # Two regular plugins and a completions pkg loaded without investigating.
 zinit wait lucid for \
-	atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay"	zdharma/fast-syntax-highlighting \
-	atload"!_zsh_autosuggest_start" 			zsh-users/zsh-autosuggestions \
-	blockf 							zsh-users/zsh-completions \
+	atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" zdharma/fast-syntax-highlighting \
+	atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+	blockf zsh-users/zsh-completions
 
 # Aliases
 alias sudo="sudo "
 alias vim="nvim"
 
 # Exports
-export EDITOR=/usr/bin/nvim
+export EDITOR="nvim"
 export VISUAL=$EDITOR
