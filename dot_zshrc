@@ -45,10 +45,7 @@ zinit as"null" wait"2" lucid from"gh-r" for \
 
 ## Aliases
 # Use exa as ls alternatives.
-alias ls="exa"
-alias la="exa -a"
-alias ll="exa -lhG"
-alias l.="exa -d .*"
+alias ls="exa" la="exa -a" ll="exa -lhG" lla="exa -lhaG" l.="exa -d .*" tree="exa --tree"
 
 alias sudo="sudo "
 alias vim="nvim"
