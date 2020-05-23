@@ -43,7 +43,13 @@ zinit as"null" wait"2" lucid from"gh-r" for \
     mv"fd* -> fd" sbin"fd/fd" @sharkdp/fd \
     sbin"fzf" junegunn/fzf-bin
 
-# Aliases
+## Aliases
+# Use exa as ls alternatives.
+alias ls="exa"
+alias la="exa -a"
+alias ll="exa -lhG"
+alias l.="exa -d .*"
+
 alias sudo="sudo "
 alias vim="nvim"
 
