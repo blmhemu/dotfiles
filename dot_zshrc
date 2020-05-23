@@ -37,6 +37,12 @@ zinit wait lucid for \
 	atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
 	blockf zsh-users/zsh-completions
 
+# Load a few useful binaries from Github releases.
+zinit as"null" wait"2" lucid from"gh-r" for \
+    mv"exa* -> exa" sbin ogham/exa \
+    mv"fd* -> fd" sbin"fd/fd" @sharkdp/fd \
+    sbin"fzf" junegunn/fzf-bin
+
 # Aliases
 alias sudo="sudo "
 alias vim="nvim"
