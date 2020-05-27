@@ -53,3 +53,9 @@ alias vim="nvim"
 # Exports
 export EDITOR="nvim"
 export VISUAL=$EDITOR
+
+{{- if eq .chezmoi.hostname "hbollamredd-a01" }}
+
+export PATH=$PATH:"/usr/local/opt/thrift@0.9/bin:$HOME/.local/bin"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home"
+{{- end }}
