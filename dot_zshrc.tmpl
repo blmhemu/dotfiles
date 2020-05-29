@@ -35,17 +35,22 @@ zinit light-mode for \
 zinit wait lucid for \
 	atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" zdharma/fast-syntax-highlighting \
 	atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
-	blockf zsh-users/zsh-completions
+	blockf zsh-users/zsh-completions \
+	OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 
 # Load a few useful binaries from Github releases.
 zinit as"null" wait"2" lucid from"gh-r" for \
-    mv"exa* -> exa" sbin ogham/exa \
-    mv"fd* -> fd" sbin"fd/fd" @sharkdp/fd \
-    sbin"fzf" junegunn/fzf-bin
+	mv"exa* -> exa" sbin ogham/exa \
+	mv"fd* -> fd" sbin"fd/fd" @sharkdp/fd \
+	sbin"fzf" junegunn/fzf-bin \
+	mv"ripgrep* -> ripgrep" sbin"ripgrep/rg" BurntSushi/ripgrep \
+	mv"bat* -> bat" sbin"bat/bat" @sharkdp/bat
 
 ## Aliases
-# Use exa as ls alternatives.
 alias ls="exa" la="exa -a" ll="exa -lhG" lla="exa -lhaG" l.="exa -d .*" tree="exa --tree"
+alias cat="bat"
+alias find="fd"
+alias grep="rg"
 
 alias sudo="sudo "
 alias vim="nvim"
