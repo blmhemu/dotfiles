@@ -22,8 +22,7 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 # Load the pure theme, with zsh-async library that's bundled with it.
-zinit ice pick"async.zsh" src"pure.zsh"
-zinit light sindresorhus/pure
+eval "$(starship init zsh)"
 
 # Oh My Zsh has excellent configs for key bindings and history.
 zinit light-mode for \
@@ -36,7 +35,6 @@ zinit wait lucid for \
 	atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" zdharma/fast-syntax-highlighting \
 	atload"!_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
 	blockf zsh-users/zsh-completions \
-	OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 
 # Load a few useful binaries from Github releases.
 zinit as"null" wait"2" lucid from"gh-r" for \
@@ -44,13 +42,19 @@ zinit as"null" wait"2" lucid from"gh-r" for \
 	sbin"fzf" junegunn/fzf-bin \
 	mv"ripgrep* -> ripgrep" sbin"ripgrep/rg" BurntSushi/ripgrep \
 	mv"fd* -> fd" sbin"fd/fd" @sharkdp/fd \
-	mv"bat* -> bat" sbin"bat/bat" @sharkdp/bat
+	mv"bat* -> bat" sbin"bat/bat" @sharkdp/bat \
+	mv"gomi* -> gomi" sbin b4b4r07/gomi
+
+zinit wait"2" lucid for \
+	 OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
+	 wfxr/forgit
 
 ## Aliases
 alias ls="exa" la="exa -a" ll="exa -lhG" lla="exa -lhaG" l.="exa -d .*" tree="exa --tree"
 alias cat="bat"
 alias find="fd"
 alias grep="rg"
+alias rm="gomi"
 
 alias sudo="sudo "
 alias vim="nvim"
@@ -64,4 +68,5 @@ export VISUAL=$EDITOR
 
 export PATH=$PATH:"/usr/local/opt/thrift@0.9/bin:$HOME/.local/bin"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home"
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 {{- end }}
