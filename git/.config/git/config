@@ -1,9 +1,8 @@
 # Common Config
 [core]
-	excludesfile = ~/.gitignore
   editor = nvim
 [commit]
-	gpgsign = true
+	gpgSign = true
 [fetch]
   prune = true
 [pull]
@@ -25,9 +24,9 @@
 
 # Directory specific gitconfig
 [includeIf "gitdir:~/Work/"]
-  path = ~/.gitconfig.work
+  path = ./config.work
 [includeIf "gitdir:~/Projects/"]
-  path = ~/.gitconfig.projects
+  path = ./config.projects
 [includeIf "gitdir:~/dotfiles/"]
-  path = ~/.gitconfig.projects
+  path = ./config.projects
 
