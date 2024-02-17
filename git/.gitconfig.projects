@@ -1,0 +1,6 @@
+[user]
+	name = Hemanth Bollamreddi
+	email = blmhemu@gmail.com
+  signingKey = 75F5493C9BBD70DA
+[init]
+  defaultBranch = main

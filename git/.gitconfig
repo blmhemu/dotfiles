@@ -1,0 +1,33 @@
+# Common Config
+[core]
+	excludesfile = ~/.gitignore
+  editor = nvim
+[commit]
+	gpgsign = true
+[fetch]
+  prune = true
+[pull]
+	rebase = true
+[tag]
+  gpgSign = true
+
+# Review later
+[merge]
+	conflictstyle = diff3
+[safe]
+	directory = *
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+# Directory specific gitconfig
+[includeIf "gitdir:~/Work/"]
+  path = ~/.gitconfig.work
+[includeIf "gitdir:~/Projects/"]
+  path = ~/.gitconfig.projects
+[includeIf "gitdir:~/dotfiles/"]
+  path = ~/.gitconfig.projects
+
