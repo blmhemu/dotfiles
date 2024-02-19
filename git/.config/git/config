@@ -1,18 +1,22 @@
 # Common Config
 [core]
   editor = nvim
+[init]
+  defaultBranch = main
 [commit]
 	gpgSign = true
 [fetch]
   prune = true
 [pull]
 	rebase = true
+[diff]
+  algorithm = histogram
 [tag]
   gpgSign = true
+[merge]
+	conflictStyle = zdiff3
 
 # Review later
-[merge]
-	conflictstyle = diff3
 [safe]
 	directory = *
 [difftool "sourcetree"]
